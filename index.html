@@ -3,51 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Didi - Dark Anime Edition</title>
+  <title>ARCHIVE // HADES - Didi Birthday Edition</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;900&family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Background Anime Dust Particles Canvas -->
+  <!-- Anime Particles Canvas -->
   <canvas id="animeCanvas"></canvas>
 
   <div class="app-container">
 
-    <!-- Header Tracker -->
+    <!-- Header Stage Tracker -->
     <header class="anime-header">
-      <div class="logo">HAPPY BIRTHDAY // DI</div>
+      <div class="logo">DARK ARCHIVE // PROJECT DIDI</div>
       <div class="step-tracker">
-        <span id="stepCounter">STAGE 01 / 04</span>
+        <span id="stepCounter">STAGE 01 / 12</span>
       </div>
     </header>
 
-    <!-- MAIN STEP CONTAINER -->
+    <!-- MAIN STAGE WRAPPER -->
     <main class="step-wrapper">
 
-      <!-- STEP 1: Gift Box / Sealed Entry -->
+      <!-- STAGE 1: The Seal -->
       <section class="step-card active" id="step1">
         <div class="card-glass">
-          <div class="anime-tag">SPECIAL BIRTHDAY ARCHIVE</div>
+          <div class="anime-tag">PROLOGUE // CORE INITIALIZATION</div>
           <h1 class="title-glow">FOR MY DEAREST DIDI</h1>
-          <p class="subtitle">Ek chota sa surprise tumhare liye, niche tap karke journey start karo.</p>
+          <p class="subtitle">Sequential encryption active. Tap the dark core to initialize the 12-stage birthday archive.</p>
           
-          <div class="gift-box-trigger" id="boxTrigger">
+          <div class="gift-box-trigger" id="step1Trigger">
             <div class="cyber-core">
-              <span class="core-icon">✨</span>
+              <span class="core-icon">⚡</span>
               <div class="core-pulse"></div>
             </div>
-            <p class="trigger-hint">TAP TO UNLOCK</p>
+            <p class="trigger-hint">TAP TO START EXPERIENCE</p>
           </div>
         </div>
       </section>
 
-      <!-- STEP 2: Virtual Cake & Candle -->
+      <!-- STAGE 2: Memory Key Matrix -->
       <section class="step-card" id="step2">
         <div class="card-glass">
-          <div class="anime-tag">PHASE 02 // CELEBRATION</div>
-          <h2 class="section-title">MAKE A WISH & BLOW THE CANDLE</h2>
-          <p class="subtitle">Mombatti par tap karo aur flame bujha kar aage badho.</p>
+          <div class="anime-tag">STAGE 02 // ACCESS KEY</div>
+          <h2 class="section-title">THE ARCHIVE KEY CODE</h2>
+          <p class="subtitle">Enter the secret birthday code sequence: <strong>1 - 4 - 0 - 9</strong></p>
+
+          <div class="pin-display" id="pinDisplay">_ _ _ _</div>
+          <div class="keypad">
+            <button class="key-btn" data-val="1">1</button>
+            <button class="key-btn" data-val="4">4</button>
+            <button class="key-btn" data-val="0">0</button>
+            <button class="key-btn" data-val="9">9</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- STAGE 3: Virtual Candle Blow -->
+      <section class="step-card" id="step3">
+        <div class="card-glass">
+          <div class="anime-tag">STAGE 03 // IGNITION</div>
+          <h2 class="section-title">THE DARK FLAME</h2>
+          <p class="subtitle">Tap the flame to extinguish and unlock the next phase.</p>
 
           <div class="cake-container">
             <div class="cake-3d">
@@ -60,58 +77,152 @@
             </div>
           </div>
 
-          <button class="btn-anime" id="blowCandleBtn">💨 BLOW OUT CANDLE</button>
+          <button class="btn-anime" id="blowBtn">💨 EXTINGUISH FLAME</button>
         </div>
       </section>
 
-      <!-- STEP 3: 3D Flip Wish Card -->
-      <section class="step-card" id="step3">
+      <!-- STAGE 4: Anime Dialogue 1 -->
+      <section class="step-card" id="step4">
         <div class="card-glass">
-          <div class="anime-tag">PHASE 03 // MEMORY CARD</div>
-          <h2 class="section-title">SPECIAL WISH CARD</h2>
-          <p class="subtitle">Card ke upar click karke secret message read karo.</p>
+          <div class="anime-tag">STAGE 04 // DIALOGUE PROTOCOL #1</div>
+          <div class="dialogue-box">
+            <span class="speaker">CHANDRASHEKHAR:</span>
+            <p class="dialogue-text">"Didi, chahe tum gussa ho jao ya shaant raho... ghar ka atmosphere tumhare aane se hi brightening aur complete lagta hai."</p>
+          </div>
+          <button class="btn-anime" id="step4Next">PROCEED ➔</button>
+        </div>
+      </section>
+
+      <!-- STAGE 5: 3D Flip Card -->
+      <section class="step-card" id="step5">
+        <div class="card-glass">
+          <div class="anime-tag">STAGE 05 // CARD FLIP</div>
+          <h2 class="section-title">EXCLUSIVE MEMORY CARD</h2>
+          <p class="subtitle">Click to flip the card and reveal the handwritten note.</p>
 
           <div class="flip-card" id="card3d">
             <div class="flip-card-inner">
               <div class="flip-card-front">
                 <div class="front-content">
                   <span class="symbol">🎴</span>
-                  <h3>TAP TO FLIP</h3>
-                  <p>Read Special Message</p>
+                  <h3>CLICK TO UNVEIL</h3>
                 </div>
               </div>
               <div class="flip-card-back">
                 <div class="back-content">
-                  <h4>HEARTFELT NOTE</h4>
-                  <p>"Tumhare hone se ghar me raunak rehti hai. Bhagwan tumhe hamesha khush rakhe aur tumhari har khwahish poori ho!"</p>
-                  <span class="sign">- Chandrashekhar</span>
+                  <h4>SISTER RECOGNITION</h4>
+                  <p>"You are literally the best sister ever. Always guiding me and being there!"</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <button class="btn-anime hidden" id="nextStep3Btn">CONTINUE TO FINAL WISHES ➔</button>
+          <button class="btn-anime hidden" id="step5Next">NEXT CHAPTER ➔</button>
         </div>
       </section>
 
-      <!-- STEP 4: Final Wishes by Chandrashekhar -->
-      <section class="step-card" id="step4">
+      <!-- STAGE 6: Sister Memory Puzzle Mini-Game -->
+      <section class="step-card" id="step6">
         <div class="card-glass">
-          <div class="anime-tag">FINAL CHAPTER // EXCLUSIVE WISHES</div>
+          <div class="anime-tag">STAGE 06 // MEMORY MATRIX</div>
+          <h2 class="section-title">MATCH THE SYMBOLS</h2>
+          <p class="subtitle">Match all 2 pairs to bypass the security wall.</p>
+
+          <div class="puzzle-grid" id="puzzleGrid">
+            <!-- Dynamically populated by JS -->
+          </div>
+
+          <button class="btn-anime hidden" id="step6Next">MATRIX CLEARED ➔</button>
+        </div>
+      </section>
+
+      <!-- STAGE 7: Anime Dialogue 2 -->
+      <section class="step-card" id="step7">
+        <div class="card-glass">
+          <div class="anime-tag">STAGE 07 // DIALOGUE PROTOCOL #2</div>
+          <div class="dialogue-box">
+            <span class="speaker">CHANDRASHEKHAR:</span>
+            <p class="dialogue-text">"Log kehte hain sisters irritating hoti hain... par mujhe pata hai tum sabse care karne wali di ho!"</p>
+          </div>
+          <button class="btn-anime" id="step7Next">PROCEED ➔</button>
+        </div>
+      </section>
+
+      <!-- STAGE 8: Interactive Wish Generator -->
+      <section class="step-card" id="step8">
+        <div class="card-glass">
+          <div class="anime-tag">STAGE 08 // WISH GENERATOR</div>
+          <h2 class="section-title">BROTHERLY BLESSING CORE</h2>
+          <p class="subtitle">Tap button to extract 3 custom birthday wishes.</p>
+
+          <div class="roast-display-box" id="wishDisplay">
+            <p id="wishText">"Tap button below to extract wishes..."</p>
+          </div>
+
+          <div class="roast-controls">
+            <button class="btn-anime" id="genWishBtn">✨ EXTRACT WISH</button>
+            <button class="btn-anime hidden" id="step8Next">CONTINUE ➔</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- STAGE 9: Anime Dialogue 3 -->
+      <section class="step-card" id="step9">
+        <div class="card-glass">
+          <div class="anime-tag">STAGE 09 // DIALOGUE PROTOCOL #3</div>
+          <div class="dialogue-box">
+            <span class="speaker">CHANDRASHEKHAR:</span>
+            <p class="dialogue-text">"Iss saal tumhare saare dreams aur career goals poore honge. Always keep shining Didi!"</p>
+          </div>
+          <button class="btn-anime" id="step9Next">PROCEED ➔</button>
+        </div>
+      </section>
+
+      <!-- STAGE 10: Sister Appreciation Meter -->
+      <section class="step-card" id="step10">
+        <div class="card-glass">
+          <div class="anime-tag">STAGE 10 // OVERDRIVE</div>
+          <h2 class="section-title">APPRECIATION OVERLOAD</h2>
+          <p class="subtitle">Tap repeated times to charge the energy bar to 100%.</p>
+
+          <div class="meter-bar-outer">
+            <div class="meter-bar-inner" id="meterInner"></div>
+          </div>
+          <div class="meter-value" id="meterVal">0%</div>
+
+          <button class="btn-anime" id="chargeBtn">⚡ CHARGE ENERGY</button>
+        </div>
+      </section>
+
+      <!-- STAGE 11: Final Heartfelt Note -->
+      <section class="step-card" id="step11">
+        <div class="card-glass">
+          <div class="anime-tag">STAGE 11 // HEARTFELT STATEMENT</div>
+          <h2 class="section-title">THE SINCERE NOTE</h2>
+          <p class="subtitle" style="text-align: left; line-height: 1.8;">
+            "Didi, tumhare bina life boring ho jati. Tumhare saath ladna, baatein karna aur masti karna mera favorite time-pass hai. Hamesha aise hi muskuraate rehna!"
+          </p>
+          <button class="btn-anime" id="step11Next">UNVEIL FINAL DEDICATION ➔</button>
+        </div>
+      </section>
+
+      <!-- STAGE 12: Epilogue Dedicated by Chandrashekhar -->
+      <section class="step-card" id="step12">
+        <div class="card-glass">
+          <div class="anime-tag">EPILOGUE // FINAL DEDICATION</div>
           <h1 class="title-glow">HAPPY BIRTHDAY DIDI!</h1>
           
           <div class="final-letter">
-            <p class="letter-line">"Khana chahe thik-thak banti ho, par tum world ki sabse best di ho jo hamesha sabka khayal rakhti ho."</p>
-            <p class="letter-line">"Hamesha aise hi hasti raho aur apni life me saari success achieve karo!"</p>
+            <p class="letter-line">"May your year be filled with happiness, success, and infinite peaceful moments."</p>
             
             <div class="exclusive-badge">
-              <span>MADE WITH ❤️ BY</span>
+              <span>DESIGNED & CREATED BY</span>
               <h3>CHANDRASHEKHAR</h3>
               <p>Aapka Pyara Bhai</p>
             </div>
           </div>
 
-          <button class="btn-anime" id="restartBtn">🔄 REPLAY EXPERIENCE</button>
+          <button class="btn-anime" id="restartBtn">🔄 REPLAY 12 STAGES</button>
         </div>
       </section>
 
