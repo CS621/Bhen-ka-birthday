@@ -112,7 +112,6 @@ body {
   color: #fff;
   letter-spacing: 1px;
   margin-bottom: 12px;
-  text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
 .section-title {
@@ -120,7 +119,6 @@ body {
   font-size: 1.3rem;
   color: #fff;
   margin-bottom: 10px;
-  letter-spacing: 1px;
 }
 
 .subtitle {
@@ -130,16 +128,10 @@ body {
   line-height: 1.5;
 }
 
-.gift-box-trigger {
-  margin: 20px auto;
-  cursor: pointer;
-  display: inline-block;
-}
-
 .cyber-core {
   position: relative;
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   background: #000;
   border: 2px solid #fff;
   border-radius: 50%;
@@ -150,7 +142,7 @@ body {
 }
 
 .core-icon {
-  font-size: 2.2rem;
+  font-size: 2rem;
 }
 
 .core-pulse {
@@ -167,24 +159,43 @@ body {
   100% { transform: scale(1.6); opacity: 0; }
 }
 
-.trigger-hint {
+.pin-display {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.85rem;
-  letter-spacing: 2px;
+  font-size: 2rem;
+  letter-spacing: 10px;
+  margin-bottom: 25px;
   color: #fff;
 }
 
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.key-btn {
+  background: #111;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 15px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
 .cake-container {
-  height: 160px;
+  height: 140px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .cake-3d {
   position: relative;
-  width: 140px;
+  width: 130px;
 }
 
 .cake-layer {
@@ -194,75 +205,66 @@ body {
   margin: 0 auto;
 }
 
-.layer-bottom {
-  width: 140px;
-  height: 50px;
-}
-
-.layer-top {
-  width: 100px;
-  height: 45px;
-  margin-bottom: -5px;
-}
+.layer-bottom { width: 130px; height: 45px; }
+.layer-top { width: 90px; height: 40px; margin-bottom: -5px; }
 
 .candle {
   position: absolute;
-  top: -30px;
+  top: -25px;
   left: 50%;
   transform: translateX(-50%);
-  width: 12px;
-  height: 35px;
+  width: 10px;
+  height: 30px;
   background: #fff;
   border-radius: 3px;
-  cursor: pointer;
 }
 
 .flame {
   position: absolute;
-  top: -15px;
+  top: -12px;
   left: 50%;
   transform: translateX(-50%);
-  width: 14px;
-  height: 18px;
+  width: 12px;
+  height: 15px;
   background: #fff;
-  border-radius: 50% 50% 20% 20%;
-  box-shadow: 0 0 15px #fff, 0 0 25px #fff;
-  animation: flicker 0.1s infinite alternate;
-  transition: all 0.3s ease;
-}
-
-.candle.off .flame {
-  opacity: 0;
-  scale: 0;
-}
-
-.smoke {
-  position: absolute;
-  top: -20px;
-  left: 50%;
-  width: 6px;
-  height: 20px;
-  background: rgba(255, 255, 255, 0.4);
   border-radius: 50%;
-  opacity: 0;
-  transition: all 0.5s ease;
+  box-shadow: 0 0 15px #fff;
+  animation: flicker 0.1s infinite alternate;
 }
 
-.candle.off .smoke {
-  opacity: 1;
-  transform: translateY(-25px);
-}
+.candle.off .flame { opacity: 0; }
 
 @keyframes flicker {
   0% { transform: translateX(-50%) scale(1); }
   100% { transform: translateX(-50%) scale(1.1); }
 }
 
+.dialogue-box {
+  background: #0a0a0a;
+  border-left: 3px solid #fff;
+  padding: 20px;
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+.speaker {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  color: #888;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.dialogue-text {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #fff;
+}
+
 .flip-card {
-  background-color: transparent;
   width: 100%;
-  max-width: 320px;
-  height: 200px;
+  max-width: 300px;
+  height: 180px;
   perspective: 1000px;
   margin: 0 auto 25px;
   cursor: pointer;
@@ -272,14 +274,11 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
-  text-align: center;
-  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.8s;
   transform-style: preserve-3d;
 }
 
-.flip-card.flipped .flip-card-inner {
-  transform: rotateY(180deg);
-}
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
 
 .flip-card-front, .flip-card-back {
   position: absolute;
@@ -291,54 +290,65 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 15px;
 }
 
-.flip-card-front {
+.flip-card-front { background: #111; color: #fff; }
+.flip-card-back { background: #fff; color: #000; transform: rotateY(180deg); }
+
+.puzzle-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  max-width: 250px;
+  margin: 0 auto 25px;
+}
+
+.puzzle-tile {
+  height: 90px;
   background: #111;
-  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  cursor: pointer;
 }
 
-.flip-card-back {
+.roast-display-box {
+  min-height: 90px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  margin-bottom: 25px;
+}
+
+.meter-bar-outer {
+  width: 100%;
+  height: 15px;
+  background: #111;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.meter-bar-inner {
+  width: 0%;
+  height: 100%;
   background: #fff;
-  color: #000;
-  transform: rotateY(180deg);
+  transition: width 0.2s ease;
 }
 
-.front-content .symbol {
-  font-size: 2.5rem;
-  display: block;
-  margin-bottom: 10px;
-}
-
-.back-content h4 {
+.meter-value {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-}
-
-.back-content p {
-  font-size: 0.9rem;
-  line-height: 1.4;
-  font-style: italic;
-  margin-bottom: 10px;
-}
-
-.back-content .sign {
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
-  font-size: 0.85rem;
-}
-
-.final-letter {
-  margin-bottom: 30px;
-}
-
-.letter-line {
-  font-size: 1.05rem;
-  line-height: 1.6;
-  color: #ddd;
-  margin-bottom: 15px;
+  font-size: 1.2rem;
+  margin-bottom: 25px;
 }
 
 .exclusive-badge {
@@ -347,24 +357,9 @@ body {
   border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.exclusive-badge span {
-  font-size: 0.75rem;
-  letter-spacing: 2px;
-  color: #888;
-}
-
-.exclusive-badge h3 {
-  font-family: 'Cinzel', serif;
-  font-size: 1.8rem;
-  color: #fff;
-  margin: 5px 0;
-  letter-spacing: 2px;
-}
-
-.exclusive-badge p {
-  font-size: 0.9rem;
-  color: #aaa;
-}
+.exclusive-badge span { font-size: 0.75rem; color: #888; }
+.exclusive-badge h3 { font-family: 'Cinzel', serif; font-size: 1.8rem; margin: 5px 0; }
+.exclusive-badge p { font-size: 0.9rem; color: #aaa; }
 
 .btn-anime {
   background: #fff;
@@ -374,19 +369,11 @@ body {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 0.85rem;
   font-weight: 700;
-  letter-spacing: 1.5px;
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
   width: 100%;
 }
 
-.btn-anime:hover {
-  background: #e0e0e0;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 20px rgba(255, 255, 255, 0.2);
-}
-
-.btn-anime.hidden {
-  display: none;
-}
+.btn-anime:hover { background: #e0e0e0; transform: translateY(-2px); }
+.btn-anime.hidden { display: none; }
