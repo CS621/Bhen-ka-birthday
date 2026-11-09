@@ -1,4 +1,3 @@
-/* --- NATIVE AUDIO SYNTHESIZER (NO EXTERNAL FILES) --- */
 const AudioEngine = {
   ctx: null,
 
@@ -38,7 +37,6 @@ const AudioEngine = {
   },
 
   playTune() {
-    // Short Happy Birthday Melody Snippet
     const notes = [
       { f: 264, d: 0.3 }, { f: 264, d: 0.3 }, { f: 297, d: 0.5 },
       { f: 264, d: 0.5 }, { f: 352, d: 0.5 }, { f: 330, d: 0.8 }
@@ -51,34 +49,29 @@ const AudioEngine = {
   }
 };
 
-/* --- STEP MANAGEMENT ENGINE --- */
 let currentStep = 1;
-const totalSteps = 5;
+const totalSteps = 4;
 
 function goToStep(stepNumber) {
   AudioEngine.playPop();
   
-  // Hide all steps
   document.querySelectorAll('.step-card').forEach(card => {
     card.classList.remove('active');
   });
 
-  // Activate targeted step
   const targetCard = document.getElementById(`step${stepNumber}`);
   if (targetCard) {
     targetCard.classList.add('active');
     currentStep = stepNumber;
-    document.getElementById('stepCounter').innerText = `STAGE 0${currentStep} / 05`;
+    document.getElementById('stepCounter').innerText = `STAGE 0${currentStep} / 04`;
   }
 }
 
-/* --- STEP 1: SEALED BOX TRIGGER --- */
 document.getElementById('boxTrigger').addEventListener('click', () => {
   AudioEngine.playTune();
   goToStep(2);
 });
 
-/* --- STEP 2: CANDLE BLOWING --- */
 const candleFlame = document.getElementById('candleFlame');
 const blowBtn = document.getElementById('blowCandleBtn');
 
@@ -93,7 +86,6 @@ blowBtn.addEventListener('click', () => {
   }, 1200);
 });
 
-/* --- STEP 3: 3D CARD FLIP --- */
 const card3d = document.getElementById('card3d');
 const nextStep3Btn = document.getElementById('nextStep3Btn');
 
@@ -104,55 +96,20 @@ card3d.addEventListener('click', () => {
 });
 
 nextStep3Btn.addEventListener('click', () => {
+  AudioEngine.playTune();
   goToStep(4);
 });
 
-/* --- STEP 4: ROAST ENGINE --- */
-const roasts = [
-  "\"Choti choti baat pe irritate hona tera birthright hai!\"",
-  "\"Khana thik-thak bana leti ho, par gussa ekdam top level ka hai.\"",
-  "\"Chitpitiya types fan #1 - Always ready to fight for no reason.\"",
-  "\"Cutie-beauty roasts ki queen, par pyari behan hamesha!\"",
-  "\"Irritated expression is your default wallpaper.\""
-];
-
-const roastText = document.getElementById('roastText');
-const generateRoastBtn = document.getElementById('generateRoastBtn');
-const nextStep4Btn = document.getElementById('nextStep4Btn');
-let roastCount = 0;
-
-generateRoastBtn.addEventListener('click', () => {
-  AudioEngine.playPop();
-  const randomIndex = Math.floor(Math.random() * roasts.length);
-  roastText.innerText = roasts[randomIndex];
-  roastCount++;
-
-  if (roastCount >= 2) {
-    nextStep4Btn.classList.remove('hidden');
-  }
-});
-
-nextStep4Btn.addEventListener('click', () => {
-  AudioEngine.playTune();
-  goToStep(5);
-});
-
-/* --- STEP 5: RESTART --- */
 document.getElementById('restartBtn').addEventListener('click', () => {
-  // Reset states
   candleFlame.classList.remove('off');
   blowBtn.innerText = "💨 BLOW OUT CANDLE";
   blowBtn.disabled = false;
   card3d.classList.remove('flipped');
   nextStep3Btn.classList.add('hidden');
-  nextStep4Btn.classList.add('hidden');
-  roastCount = 0;
-  roastText.innerText = '"Click the button to extract Didi\'s personality trait..."';
   
   goToStep(1);
 });
 
-/* --- CANVAS BACKGROUND ANIME PARTICLES --- */
 const canvas = document.getElementById('animeCanvas');
 const ctx = canvas.getContext('2d');
 
