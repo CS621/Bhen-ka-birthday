@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Didi - Dark Anime Edition</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;900&family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Background Anime Dust Particles Canvas -->
+  <canvas id="animeCanvas"></canvas>
+
+  <div class="app-container">
+
+    <!-- Header Tracker -->
+    <header class="anime-header">
+      <div class="logo">HAPPY BIRTHDAY // DI</div>
+      <div class="step-tracker">
+        <span id="stepCounter">STAGE 01 / 04</span>
+      </div>
+    </header>
+
+    <!-- MAIN STEP CONTAINER -->
+    <main class="step-wrapper">
+
+      <!-- STEP 1: Gift Box / Sealed Entry -->
+      <section class="step-card active" id="step1">
+        <div class="card-glass">
+          <div class="anime-tag">SPECIAL BIRTHDAY ARCHIVE</div>
+          <h1 class="title-glow">FOR MY DEAREST DIDI</h1>
+          <p class="subtitle">Ek chota sa surprise tumhare liye, niche tap karke journey start karo.</p>
+          
+          <div class="gift-box-trigger" id="boxTrigger">
+            <div class="cyber-core">
+              <span class="core-icon">✨</span>
+              <div class="core-pulse"></div>
+            </div>
+            <p class="trigger-hint">TAP TO UNLOCK</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- STEP 2: Virtual Cake & Candle -->
+      <section class="step-card" id="step2">
+        <div class="card-glass">
+          <div class="anime-tag">PHASE 02 // CELEBRATION</div>
+          <h2 class="section-title">MAKE A WISH & BLOW THE CANDLE</h2>
+          <p class="subtitle">Mombatti par tap karo aur flame bujha kar aage badho.</p>
+
+          <div class="cake-container">
+            <div class="cake-3d">
+              <div class="candle" id="candleFlame">
+                <div class="flame"></div>
+                <div class="smoke"></div>
+              </div>
+              <div class="cake-layer layer-top"></div>
+              <div class="cake-layer layer-bottom"></div>
+            </div>
+          </div>
+
+          <button class="btn-anime" id="blowCandleBtn">💨 BLOW OUT CANDLE</button>
+        </div>
+      </section>
+
+      <!-- STEP 3: 3D Flip Wish Card -->
+      <section class="step-card" id="step3">
+        <div class="card-glass">
+          <div class="anime-tag">PHASE 03 // MEMORY CARD</div>
+          <h2 class="section-title">SPECIAL WISH CARD</h2>
+          <p class="subtitle">Card ke upar click karke secret message read karo.</p>
+
+          <div class="flip-card" id="card3d">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="front-content">
+                  <span class="symbol">🎴</span>
+                  <h3>TAP TO FLIP</h3>
+                  <p>Read Special Message</p>
+                </div>
+              </div>
+              <div class="flip-card-back">
+                <div class="back-content">
+                  <h4>HEARTFELT NOTE</h4>
+                  <p>"Tumhare hone se ghar me raunak rehti hai. Bhagwan tumhe hamesha khush rakhe aur tumhari har khwahish poori ho!"</p>
+                  <span class="sign">- Chandrashekhar</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn-anime hidden" id="nextStep3Btn">CONTINUE TO FINAL WISHES ➔</button>
+        </div>
+      </section>
+
+      <!-- STEP 4: Final Wishes by Chandrashekhar -->
+      <section class="step-card" id="step4">
+        <div class="card-glass">
+          <div class="anime-tag">FINAL CHAPTER // EXCLUSIVE WISHES</div>
+          <h1 class="title-glow">HAPPY BIRTHDAY DIDI!</h1>
+          
+          <div class="final-letter">
+            <p class="letter-line">"Khana chahe thik-thak banti ho, par tum world ki sabse best di ho jo hamesha sabka khayal rakhti ho."</p>
+            <p class="letter-line">"Hamesha aise hi hasti raho aur apni life me saari success achieve karo!"</p>
+            
+            <div class="exclusive-badge">
+              <span>MADE WITH ❤️ BY</span>
+              <h3>CHANDRASHEKHAR</h3>
+              <p>Aapka Pyara Bhai</p>
+            </div>
+          </div>
+
+          <button class="btn-anime" id="restartBtn">🔄 REPLAY EXPERIENCE</button>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
