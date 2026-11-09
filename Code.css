@@ -1,0 +1,427 @@
+/* --- RESET & DARK MONOCHROME BASE --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  background-color: #050505;
+  color: #e6e6e6;
+  font-family: 'Outfit', sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- CANVAS BACKGROUND --- */
+#animeCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* --- MAIN APP LAYOUT --- */
+.app-container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 650px;
+  min-height: 90vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- HEADER --- */
+.anime-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  margin-bottom: 30px;
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+}
+
+.logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: #888;
+}
+
+.step-tracker span {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+/* --- STEP WRAPPER & ANIMATION --- */
+.step-wrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-card {
+  display: none;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(20px) scale(0.98);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.step-card.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.card-glass {
+  background: rgba(15, 15, 15, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 35px 25px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(15px);
+}
+
+.anime-tag {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.title-glow {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: #aaa;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+/* --- STEP 1: TRIGGER CORE --- */
+.gift-box-trigger {
+  margin: 20px auto;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.cyber-core {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: #000;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.core-icon {
+  font-size: 2.2rem;
+}
+
+.core-pulse {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+.trigger-hint {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+/* --- STEP 2: VIRTUAL CAKE & CANDLE --- */
+.cake-container {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.cake-3d {
+  position: relative;
+  width: 140px;
+}
+
+.cake-layer {
+  background: #222;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.layer-bottom {
+  width: 140px;
+  height: 50px;
+}
+
+.layer-top {
+  width: 100px;
+  height: 45px;
+  margin-bottom: -5px;
+}
+
+.candle {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 35px;
+  background: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.flame {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50% 50% 20% 20%;
+  box-shadow: 0 0 15px #fff, 0 0 25px #fff;
+  animation: flicker 0.1s infinite alternate;
+  transition: all 0.3s ease;
+}
+
+.candle.off .flame {
+  opacity: 0;
+  scale: 0;
+}
+
+.smoke {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  width: 6px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.candle.off .smoke {
+  opacity: 1;
+  transform: translateY(-25px);
+}
+
+@keyframes flicker {
+  0% { transform: translateX(-50%) scale(1); }
+  100% { transform: translateX(-50%) scale(1.1); }
+}
+
+/* --- STEP 3: 3D FLIP CARD --- */
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  max-width: 320px;
+  height: 200px;
+  perspective: 1000px;
+  margin: 0 auto 25px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  border: 1px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.flip-card-front {
+  background: #111;
+  color: #fff;
+}
+
+.flip-card-back {
+  background: #fff;
+  color: #000;
+  transform: rotateY(180deg);
+}
+
+.front-content .symbol {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.back-content h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.back-content p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.back-content .sign {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+/* --- STEP 4: ROAST GENERATOR --- */
+.roast-display-box {
+  min-height: 100px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  margin-bottom: 25px;
+}
+
+.roast-display-box p {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.roast-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* --- STEP 5: FINAL DEDICATION --- */
+.final-letter {
+  margin-bottom: 30px;
+}
+
+.letter-line {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #ddd;
+  margin-bottom: 15px;
+}
+
+.exclusive-badge {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.exclusive-badge span {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: #888;
+}
+
+.exclusive-badge h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  color: #fff;
+  margin: 5px 0;
+  letter-spacing: 2px;
+}
+
+.exclusive-badge p {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* --- BUTTONS --- */
+.btn-anime {
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 14px 28px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.btn-anime:hover {
+  background: #e0e0e0;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(255, 255, 255, 0.2);
+}
+
+.btn-anime.hidden {
+  display: none;
+}

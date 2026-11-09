@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chitpitiya Didi - Chapter 0</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;900&family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Background Canvas for Dark Anime Particle System -->
+  <canvas id="animeCanvas"></canvas>
+
+  <div class="app-container">
+
+    <!-- Header Progress Line -->
+    <header class="anime-header">
+      <div class="logo">PROLOGUE // CHITPITIYA DIALOGUES</div>
+      <div class="step-tracker">
+        <span id="stepCounter">STAGE 01 / 05</span>
+      </div>
+    </header>
+
+    <!-- MAIN STEP CONTAINER (One Screen at a Time) -->
+    <main class="step-wrapper">
+
+      <!-- STEP 1: Gift Box / Sealed Box -->
+      <section class="step-card active" id="step1">
+        <div class="card-glass">
+          <div class="anime-tag">STRICTLY UNREAD // ARCHIVE #1409</div>
+          <h1 class="title-glow">SEALED FOR MY CHITPITIYA DIANA</h1>
+          <p class="subtitle">Bina faltu irritation ke niche wale core par tap kar, interactive archive unlock ho raha hai.</p>
+          
+          <div class="gift-box-trigger" id="boxTrigger">
+            <div class="cyber-core">
+              <span class="core-icon">⚡</span>
+              <div class="core-pulse"></div>
+            </div>
+            <p class="trigger-hint">TAP TO BREAK THE SEAL</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- STEP 2: Cake & Candle Blowing -->
+      <section class="step-card" id="step2">
+        <div class="card-glass">
+          <div class="anime-tag">PHASE 02 // CANDLE SIMULATION</div>
+          <h2 class="section-title">THE VIRTUAL CAKE & FIRE</h2>
+          <p class="subtitle">Khana thik-thak bana leti ho, par mombatti bujhana aana chahiye. Candle par tap karo aur flame bujha ke agla step unlock karo.</p>
+
+          <div class="cake-container">
+            <div class="cake-3d">
+              <div class="candle" id="candleFlame">
+                <div class="flame"></div>
+                <div class="smoke"></div>
+              </div>
+              <div class="cake-layer layer-top"></div>
+              <div class="cake-layer layer-bottom"></div>
+            </div>
+          </div>
+
+          <button class="btn-anime" id="blowCandleBtn">💨 BLOW OUT CANDLE</button>
+        </div>
+      </section>
+
+      <!-- STEP 3: 3D Flip Card -->
+      <section class="step-card" id="step3">
+        <div class="card-glass">
+          <div class="anime-tag">PHASE 03 // MEMORY CARD FLIP</div>
+          <h2 class="section-title">3D CHITPITIYA ARCHIVE CARD</h2>
+          <p class="subtitle">Card ke upar click karke secret roast Flip karke read kar.</p>
+
+          <div class="flip-card" id="card3d">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="front-content">
+                  <span class="symbol">🎴</span>
+                  <h3>CHITPITIYA ARCHIVE</h3>
+                  <p>Click to Flip & Reveal Roast</p>
+                </div>
+              </div>
+              <div class="flip-card-back">
+                <div class="back-content">
+                  <h4>TRUTH ARCHIVE</h4>
+                  <p>"Choti choti baat pe irritate hona tera birthright hai. Par jo bhi bolo, meri chitpitiya types fan ho tum. Stay same!"</p>
+                  <span class="sign">- Chandrashekhar</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn-anime hidden" id="nextStep3Btn">CONTINUE TO ROAST ENGINE ➔</button>
+        </div>
+      </section>
+
+      <!-- STEP 4: Compliment / Roast Generator Wheel -->
+      <section class="step-card" id="step4">
+        <div class="card-glass">
+          <div class="anime-tag">PHASE 04 // ROAST ENGINE</div>
+          <h2 class="section-title">CHITPITIYA RANDOMIZER</h2>
+          <p class="subtitle">Button tap kar aur dekhte hain kaun sa roast status generate hota hai.</p>
+
+          <div class="roast-display-box" id="roastDisplay">
+            <p id="roastText">"Click the button to extract Didi's personality trait..."</p>
+          </div>
+
+          <div class="roast-controls">
+            <button class="btn-anime" id="generateRoastBtn">⚡ GENERATE ROAST / QUOTE</button>
+            <button class="btn-anime hidden" id="nextStep4Btn">FINAL BROTHER WISHES ➔</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- STEP 5: Final Wishes Exclusive by Chandrashekhar -->
+      <section class="step-card" id="step5">
+        <div class="card-glass">
+          <div class="anime-tag">EPILOGUE // EXCLUSIVE BROTHER DEDICATION</div>
+          <h1 class="title-glow">HAPPY BIRTHDAY MERI PYARI BEHAN!</h1>
+          
+          <div class="final-letter">
+            <p class="letter-line">"Khana thik-thak bana leti ho, choti-choti baaton par gussa bhi ho jati ho... par kitni bhi irritated ho jao, rehna hamesha bilkul chitpitiya types hi!"</p>
+            <p class="letter-line">"Aapki cutie-beauty roasts aur tantrums ke bina ghar boring ho jata hai."</p>
+            
+            <div class="exclusive-badge">
+              <span>MADE BY & ONLY FROM</span>
+              <h3>CHANDRASHEKHAR</h3>
+              <p>Aapka Pyara Bhai</p>
+            </div>
+          </div>
+
+          <button class="btn-anime" id="restartBtn">🔄 REPLAY EXPERIENCE</button>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
